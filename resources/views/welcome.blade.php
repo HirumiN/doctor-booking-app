@@ -17,10 +17,12 @@
         <livewire:top-bar-navigation/>
 
         <main id="content">
-            <div class="px-4 py-20 mx-auto max-w-7xl sm:px-6 lg:px8">
-                <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+            <div class="w-full px-4 py-10 mx-auto sm:px-6 lg:px8">
+
                     <livewire:hero-section/>
-                </div>
+                    <livewire:featured-doctor/>
+                    <livewire:specialist-cards/>
+                    <livewire:featured-articles/>
             </div>
         </main>
     </body>
