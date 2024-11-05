@@ -1,3 +1,3 @@
 <x-app-layout>
-    <h1>Hai admin</h1>
+    <livewire:recent-appointments>
 </x-app-layout>

@@ -14,7 +14,7 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('/doctor/dashboard', [AdminController::class, 'index'])
+Route::get('/admin/dashboard', [AdminController::class, 'index'])
     ->middleware(['auth', 'verified', 'admin'])
     ->name('admin-dashboard');
 

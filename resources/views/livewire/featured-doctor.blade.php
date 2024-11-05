@@ -61,11 +61,12 @@
                             Book Appointment
                         </a>
                     @else
-                    @endif
-                        <a href="/login"
+                    <a href="/login"
                             class="inline-flex items-center px-4 py-2 ml-5 text-sm font-medium text-blue-800 bg-blue-100 border border-transparent rounded-lg gap-x-4 hover:bg-blue-200 focus:outline-none focus:bg-blue-200 disabled:opacity-50 disabled:pointer-events-none">
                             Book Appointment
                         </a>
+                    @endif
+
                 </div>
 
             </div>
