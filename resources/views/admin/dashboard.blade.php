@@ -1,3 +1,5 @@
 <x-app-layout>
-    <livewire:recent-appointments>
+
+    <livewire:recent-appointments />
+
 </x-app-layout>
