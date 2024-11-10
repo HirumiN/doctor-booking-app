@@ -3,8 +3,8 @@
     <!-- Grid -->
     <div class="grid gap-4 md:grid-cols-2 md:gap-8 xl:gap-20 md:items-center">
       <div>
-        <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight">Start your journey with <span class="text-blue-600">Preline</span></h1>
-        <p class="mt-3 text-lg text-gray-800">Hand-picked professionals and expertly crafted components, designed for any kind of entrepreneur.</p>
+        <h1 class="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-4xl lg:leading-tight">Your Health, Your Schedule<span class="block text-blue-600">Book Appointments with Ease</span></h1>
+                    <p class="mt-3 text-lg text-gray-800 dark:text-neutral-400">Welcome!, your one-stop solution for managing your health. Whether you need a quick consultation or a routine check-up, our app lets you book appointments with top-rated doctors at your convenience.</p>
 
         <!-- Buttons -->
         <div class="grid w-full gap-3 mt-7 sm:inline-flex">
