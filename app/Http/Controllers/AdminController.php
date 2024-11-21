@@ -24,4 +24,8 @@ class AdminController extends Controller
     public function createSpecialities(){
         return view("admin.create-speciality");
     }
+    public function editSpecialities($specialty_id){
+        $id = $specialty_id;
+        return view("admin.edit-speciality", compact("id"));
+    }
 }

@@ -29,6 +29,7 @@ Route::group(['middleware' => 'admin'], function(){
 
     Route::get('/admin/specialities/create', [AdminController::class, 'createSpecialities'])
     ->name('create-specialities');
+    Route::get('/edit/speciality/{speciality}', [AdminController::class,'editSpecialities']);
 });
 
 

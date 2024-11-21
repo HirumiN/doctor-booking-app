@@ -1,9 +1,10 @@
 <!-- Table Section -->
 <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
     @if (session()->has('message'))
-    <div class="p-4 mt-2 text-sm text-white bg-teal-500 rounded-lg" role="alert" tabindex="-1" aria-labelledby="hs-solid-color-success-label">
-        <span id="hs-solid-color-success-label" class="font-bold">Success</span> {{session('message')}}
-      </div>
+        <div class="p-4 mt-2 text-sm text-white bg-teal-500 rounded-lg" role="alert" tabindex="-1"
+            aria-labelledby="hs-solid-color-success-label">
+            <span id="hs-solid-color-success-label" class="font-bold">Success</span> {{ session('message') }}
+        </div>
     @endif
     <!-- Card -->
     <div class="flex flex-col">
@@ -46,13 +47,19 @@
                             <tr>
                                 <th scope="col" class="px-6 py-3 border-gray-200 text-start border-s">
                                     <span class="text-xs font-semibold tracking-wide text-gray-800 uppercase">
-                                        Country
+                                        S/N
                                     </span>
                                 </th>
 
-                                <th scope="col" class="px-6 py-3 text-start">
+                                <th scope="col" class="px-6 py-3 border-gray-200 text-start border-s">
                                     <span class="text-xs font-semibold tracking-wide text-gray-800 uppercase">
-                                        Users
+                                        Speciality Name
+                                    </span>
+                                </th>
+
+                                <th scope="col" colspan="2" class="px-6 py-3 border-gray-200 text-start border-s">
+                                    <span class="text-xs font-semibold tracking-wide text-gray-800 uppercase">
+                                        Actions
                                     </span>
                                 </th>
 
@@ -60,19 +67,39 @@
                         </thead>
 
                         <tbody class="divide-y divide-gray-200">
+                            @if (count($specialities) > 0)
+                                @foreach ($specialities as $speciality)
+                                    <tr>
+                                        <td class="w-auto h-px whitespace-nowrap">
+                                            <div class="px-6 py-2">
+                                                <span class="text-sm text-gray-800">{{ $loop->iteration }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="w-auto h-px whitespace-nowrap">
+                                            <div class="px-6 py-2">
+                                                <span class="text-sm text-gray-800">{{ $speciality->name }}</span>
+                                            </div>
+                                        </td>
+                                        <td class="w-auto h-px text-center align-middle whitespace-nowrap">
+                                            <div class="inline-flex space-x-9">
+                                                <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
+                                                href="/edit/speciality/{{$speciality->id}}">
+                                                Edit
+                                            </a>
+                                            <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none"
+                                                href="/edit/speciality/{{$speciality->id}}">
+                                                Cancel
+                                            </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="3">No data found!</td>
+                                </tr>
+                            @endif
 
-                            <tr>
-                                <td class="w-auto h-px whitespace-nowrap">
-                                    <div class="px-6 py-2">
-                                        <span class="text-sm text-gray-800">1.64%</span>
-                                    </div>
-                                </td>
-                                <td class="w-auto h-px whitespace-nowrap">
-                                    <div class="px-6 py-2">
-                                        <span class="text-sm text-gray-800">00:00:55</span>
-                                    </div>
-                                </td>
-                            </tr>
                         </tbody>
                     </table>
                     <!-- End Table -->

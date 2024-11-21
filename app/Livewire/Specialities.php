@@ -8,6 +8,8 @@ class Specialities extends Component
 {
     public function render()
     {
-        return view('livewire.specialities');
+        return view('livewire.specialities', [
+            'specialities' => \App\Models\Specialities::all()
+        ]);
     }
 }
