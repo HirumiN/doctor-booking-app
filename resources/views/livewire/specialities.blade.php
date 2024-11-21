@@ -86,17 +86,17 @@
                                                 href="/edit/speciality/{{$speciality->id}}">
                                                 Edit
                                             </a>
-                                            <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none"
-                                                href="/edit/speciality/{{$speciality->id}}">
+                                            <button wire:confirm.prevent='Are you sure?' wire:click='delete({{$speciality->id}})' class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none"
+                                                >
                                                 Cancel
-                                            </a>
+                                            </button>
                                             </div>
                                         </td>
                                     </tr>
                                 @endforeach
                             @else
                                 <tr>
-                                    <td colspan="3">No data found!</td>
+                                    <td class="h-20 font-semibold tracking-wide text-center text-gray-800 align-middle" colspan="3">No data found!</td>
                                 </tr>
                             @endif
 
