@@ -7,33 +7,26 @@ use Livewire\Component;
 
 class EditSpecialityForm extends Component
 {
-    public $speciality;
 
+    public $speciality;
     public $name;
 
-    public function mount($id)
-    {
-        $this->speciality = Specialities::find($id);
+    public function mount($speciality_id){
+        $this->speciality = Specialities::find($speciality_id);
 
-        $this->name = $this->speciality->name;
+        $this->name = $this->speciality->speciality_name;
     }
 
-    public function update()
-    {
-        // Validasi input
-        $this->validate([
-            'name' => 'required'
-        ]);
-
-        // Mengupdate data speciality
+    public function update(){
+        $this->validate(['name' => 'required']);
+        // update
         $update = Specialities::find($this->speciality->id);
         $update->update([
-            'name' => $this->name
+            'speciality_name' => $this->name
         ]);
 
-        // Opsional: Menambahkan feedback atau mengarahkan setelah update
-        session()->flash('message', 'Specialty updated successfully!');
-        return redirect()->route('admin-specialities');
+        session()->flash('message','speciality updated successfully');
+        return $this->redirect('/admin/specialities', navigate: true);
     }
     public function render()
     {

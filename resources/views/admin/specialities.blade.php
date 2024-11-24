@@ -1,3 +1,3 @@
 <x-app-layout>
-    <livewire:specialities>
+    <livewire:specialities-component/>
 </x-app-layout>

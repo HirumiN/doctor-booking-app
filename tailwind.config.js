@@ -18,5 +18,7 @@ export default {
         },
     },
 
-    plugins: [forms, require('preline/plugin'),],
+    plugins: [forms,
+        require('preline/plugin'),
+    ],
 };

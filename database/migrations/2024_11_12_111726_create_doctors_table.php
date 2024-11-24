@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->string('hospital');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('hospital_name');
             $table->unsignedBigInteger('speciality_id');
             $table->foreign('speciality_id')->references('id')->on('specialities')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('bio')->nullable();
             $table->integer('experience')->nullable();
+            $table->integer('is_featured')->default(0); //0- not 1 - featured
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
             $table->timestamps();

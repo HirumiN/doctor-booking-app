@@ -2,30 +2,29 @@
 
 namespace App\Models;
 
-use App\Models\User;
-use App\Models\Specialities;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
     use HasFactory;
-    protected $fillable = [
 
-        'bio' ,
-        'hospital' ,
-        'user_id' ,
-        'speciality_id' ,
-        'twitter' ,
-        'instagram' ,
-        'experience' ,
+    protected $fillable = [
+            'bio',
+            'hospital_name',
+            'speciality_id',
+            'user_id',
+            'twitter',
+            'instagram',
+            'experience',
+            'is_featured',
     ];
 
     public function speciality(){
-        return $this->belongsTo(Specialities::class, 'speciality_id');
+        return $this->belongsTo(Specialities::class,'speciality_id');
     }
 
-    public function user(){
-        return $this->belongsTo(User::class, 'user_id');
+    public function doctorUser(){
+        return $this->belongsTo(User::class,'user_id');
     }
 }

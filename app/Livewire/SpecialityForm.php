@@ -7,19 +7,21 @@ use Livewire\Component;
 
 class SpecialityForm extends Component
 {
-    public $name ="";
+    public $name = '';
 
-    public function submit(){
+    public function save(){
+
         $this->validate([
-            'name' => 'required',
+            'name' => 'required'
         ]);
 
-        $submit = new Specialities();
-        $submit->name = $this->name;
-        $submit->save();
-
-        session()->flash('message','Data has been saved successfully!');
-        return $this->redirect(route('admin-specialities'), navigate: true);
+        // save to db
+        $save = new Specialities();
+        $save->speciality_name = $this->name;
+        $save->save();
+        
+        session()->flash('message','speciality created successfully');
+        return $this->redirect('/admin/specialities',navigate: true);
     }
     public function render()
     {

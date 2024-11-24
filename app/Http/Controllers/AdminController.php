@@ -6,26 +6,44 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index(){
-        return view("admin.dashboard");
+   public function loadAdminDashboard()
+    {
+        return view('admin.dashboard');
     }
 
-    public function view(){
-        return view("admin.doctor-listing");
+    public function loadDoctorListing()
+    {
+        return view('admin.doctor-listing');
     }
 
-    public function createDoctor(){
-        return view("admin.create-doctor");
+    public function loadDoctorForm(){
+        return view('admin.doctor-form');
     }
 
-    public function viewSPecialities(){
-        return view("admin.specialities");
+     public function loadEditDoctorForm($doctor_id){
+        $id = $doctor_id;
+        return view('admin.edit-doctor',compact('id'));
     }
-    public function createSpecialities(){
-        return view("admin.create-speciality");
+    public function loadAllSpecialities(){
+        return view('admin.specialities');
     }
-    public function editSpecialities($specialty_id){
-        $id = $specialty_id;
-        return view("admin.edit-speciality", compact("id"));
+
+    public function loadSpecialityForm(){
+        return view('admin.speciality-form');
+    }
+
+    public function loadEditSpecialityForm($speciality_id){
+        $id = $speciality_id;
+        return view('admin.edit-speciality-form',compact('id'));
+    }
+
+
+    public function loadAllAppointments(){
+        return view('admin.appointments');
+    }
+
+    public function loadReschedulingForm($id){
+        $appointment_id = $id;
+        return view('admin.reschedule-form',compact('appointment_id'));
     }
 }

@@ -13,17 +13,43 @@
         <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <livewire:top-bar-navigation/>
+    <body class="antialiased font-sans">
+        <!-- ========== HEADER ========== -->
+            <livewire:top-bar-navigation />
+        <!-- ========== END HEADER ========== -->
 
-        <main id="content">
-            <div class="w-full px-4 py-10 mx-auto sm:px-6 lg:px8">
-
-                    <livewire:hero-section/>
-                    <livewire:featured-doctor/>
-                    <livewire:specialist-cards/>
-                    <livewire:featured-articles/>
+<!-- ========== MAIN CONTENT ========== -->
+<main id="content">
+  <div class="py-10 bg-gray-200">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <livewire:hero-section/>
             </div>
-        </main>
+        </div>
+    </div>
+    <div class="py-5 bg-gray-200">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <livewire:featured-doctors :speciality_id="0"/>
+            </div>
+        </div>
+    </div>
+    <div class="py-5 bg-gray-200">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <livewire:specialist-cards/>
+            </div>
+        </div>
+    </div>
+    <div class="py-5 bg-gray-200">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <livewire:featured-articles/>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- ========== END MAIN CONTENT ========== -->
+
     </body>
 </html>

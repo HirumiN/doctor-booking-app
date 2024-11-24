@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Specialities extends Model
 {
-     use HasFactory;
+    use HasFactory;
 
-     protected $fillable = ['name'];
+    protected $fillable = [
+        'speciality_name'
+    ];
 }
